@@ -38,7 +38,7 @@
                         @endif
 
                         <div class="row p-3">
-                            <label for="name" class="col-md-2 col-form-label">Name</label>
+                            <label for="name" class="col-md-2 col-form-label">Name <b class="text-danger">*</b></label>
                             <div class="col-md-10">
                                 <input type="text" id="name" class="form-control" value="{{ old('name') }}" name="name"
                                     placeholder="Enter Product name" required autofocus>
@@ -60,7 +60,7 @@
                         <div class="row p-3">
                             <label for="price" class="col-md-2 col-form-label">Price</label>
                             <div class="col-md-10">
-                                <input type="number" id="price" class="form-control" value="{{ old('price') }}"
+                                <input type="number" step="0.01" id="price" class="form-control" value="{{ old('price') }}"
                                     name="price" placeholder="Enter Product price">
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                             <label for="image" class="col-md-2 col-form-label">Image</label>
                             <div class="col-md-10">
                                 <input type="file" id="image" class="form-control" value="{{ old('image') }}"
-                                    name="image">
+                                    name="image" accept="image/*">
                             </div>
                         </div>
 
@@ -78,14 +78,6 @@
                             <div class="col-md-10">
                                 <textarea type="text" id="description" class="form-control" value="{{ old('description') }}" name="description"
                                     placeholder="Enter Product Details"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="row p-2">
-                            <div class="col-md-2">Active Status</div>
-                            <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="is_active" value="1" id="is_active" style="transform: scale(1.5); margin-right:8px" checked>
-                                <label class="form-check-label" for="is_active">Active </label>
                             </div>
                         </div>
 

@@ -13,10 +13,11 @@ class CreateProductsTable extends Migration
             $table->bigInteger('category_id')->unsigned()->nullable();
 
             $table->string('name', 100);
-            $table->integer('price')->nullable();
+            //$table->float('price')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->string('image')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('is_active')->default(0);
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')
@@ -25,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->unique(['category_id', 'name'], 'unique_identifier');
         });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('products');

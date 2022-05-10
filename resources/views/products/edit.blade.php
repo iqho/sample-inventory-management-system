@@ -37,7 +37,7 @@
                         @endif
 
                         <div class="row p-2">
-                            <label for="name" class="col-md-2 col-form-label">Name</label>
+                            <label for="name" class="col-md-2 col-form-label">Name <b class="text-danger">*</b></label>
                             <div class="col-md-10">
                                 <input type="text" id="name" class="form-control" value="{{ $product->name }}"
                                     name="name" placeholder="Enter Product name" required autofocus>
@@ -70,7 +70,7 @@
                             <label for="image" class="col-md-2 col-form-label">Image</label>
                             <div class="col-md-8">
                                 <input type="file" id="image" class="form-control" value="{{ old('image') }}"
-                                    name="image">
+                                    name="image" accept="image/*">
                             </div>
                             <div class="col-md-2">
                                 @if ($product->image && file_exists(public_path('product-images/' . $product->image)))
@@ -85,14 +85,6 @@
                             <div class="col-md-10">
                                 <textarea type="text" id="description" class="form-control" name="description"
                                     placeholder="Enter Product Details">{{ $product->description }}</textarea>
-                            </div>
-                        </div>
-
-                        <div class="row p-2">
-                            <div class="col-md-2">Active Status</div>
-                            <div class="col-4">
-                                <input class="form-check-input" type="checkbox" name="is_active" value="1" id="is_active" @if($product->is_active == 1) checked @endif style="transform: scale(1.5); margin-right:8px">
-                                <label class="form-check-label" for="is_active">Active </label>
                             </div>
                         </div>
 
